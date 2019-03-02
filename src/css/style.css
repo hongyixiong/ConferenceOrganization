@@ -1,0 +1,217 @@
+/*****************************************************************************/
+/* General */
+/*****************************************************************************/
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "PT Serif", serif;
+	font-size: 1.0rem;
+	line-height: 1.4;
+	background-color: #ddd;
+}
+
+h1, h2, h3, h4, h5, h6,
+header nav ul li,
+th,
+#voting-history .voted,
+.statement {
+	font-family: "Josefin Sans", sans-serif;
+	font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.15);
+	margin: 1.0em 0 0.5em 0;
+}
+
+h1 	{	font-size: 2.0rem;	}
+h2 	{	font-size: 1.75rem;	}
+h3 	{	font-size: 1.5rem;	}
+h4 	{	font-size: 1.375rem;	}
+h5 	{	font-size: 1.25rem;	}
+h6 	{	font-size: 1.125rem;	}
+
+a {
+	color: #00008b;
+}
+
+a:hover {
+	color: #000080;
+	text-decoration: none;
+}
+
+p {
+	margin: 1rem 0;	
+}
+
+ul, ol {
+	padding-left: 32px;	
+	margin: 0.5rem 0 1.0rem 0;	
+}
+
+img {
+	max-width: 100%;
+	max-height: 150px;
+}
+
+table {
+	border-collapse: collapse;	
+}
+
+th, td {
+	padding: 5px 10px;
+	border: 1px solid black;
+	min-width: 40px; 
+}
+
+th {
+	background-color: #f1f1f1;	
+}
+
+.image-container {
+	text-align: center;	
+}
+
+
+/*****************************************************************************/
+/* Header */
+/*****************************************************************************/
+header {
+	color: #fff;
+	background-color: #000;
+	text-align: center;
+}
+
+header img {
+	border-radius: 50%;
+	padding: 20px 0;
+}
+
+header nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+header nav ul li a {
+	display: block;
+	margin: 0;
+	padding: 15px 20px;
+	color: #fff;
+	border-top: 1px solid #fff;
+	font-size: 1.125rem;
+	text-decoration: none;
+	transition: color 0.5s;
+	transition: background-color 0.5s;
+}
+
+header nav ul li a:hover {
+	color: #000;
+	background-color: #fff;
+	text-decoration: none;
+}
+
+
+/*****************************************************************************/
+/* Main Content */
+/*****************************************************************************/
+#main-content {
+	background-color: #fff;
+	margin: 20px;
+	padding: 20px 20px 40px 20px;
+}
+
+#page-title {
+	text-align: center;
+}
+
+.highlight {
+	padding: 10px;
+	text-align: center;
+	font-style: italic;
+	background-color: #f1f1f1;
+	box-shadow: 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+#voting-history .voted {
+	text-align: center;	
+}
+
+#voting-history .statement {
+	background-color: #f1f1f1;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+/*****************************************************************************/
+/* Footer */
+/*****************************************************************************/
+footer {
+	color: #fff;
+	background-color: #000;	
+	padding: 20px;
+	text-align: center;
+}
+
+
+/*****************************************************************************/
+/* Newsletter Overlay */
+/*****************************************************************************/
+#newsletter-overlay {
+	background-color: rgba(0, 0, 0, 0.75);
+	text-align: center;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	/* Additions for overlay display and dismissal in JS-only solution */
+/*
+	opacity: 0;
+	transition: opacity 0.75s linear;
+*/
+	/* Addition for fade-in and fade-out in jQuery solution */
+	display: none;
+}
+
+#newsletter-overlay.shown {
+	opacity: 1;	
+}
+
+#newsletter-subscribe {
+	background-color: #fff;
+	border-radius: 8px;
+	padding: 20px;
+	margin: 20px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(calc(-50% - 20px), calc(-50% - 20px));
+	min-width: 150px;
+	max-width: 400px;
+}
+
+
+/*****************************************************************************/
+/* Slider */
+/*****************************************************************************/
+.photo-slider {
+	list-style-type: none;
+	padding: 0 0;
+	margin: 0 20px;
+}
+
+.photo-slider li {
+	padding: 0 10px;
+	margin: 0;
+}
+
+.photo-slider .slick-slide img {
+	max-height: 200px;
+}
+
+.photo-slider .slick-prev::before, 
+.photo-slider .slick-next::before {
+	color: #000;	
+}
