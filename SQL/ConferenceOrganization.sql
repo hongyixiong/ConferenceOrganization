@@ -14,7 +14,7 @@ CREATE TABLE committee_members (
     email VARCHAR(100),
     committee_name VARCHAR(50),
     FOREIGN KEY (committee_name) REFERENCES sub_committees(name)
-    ON DELETE SET null
+    ON DELETE CASCADE
 );
 
 ALTER TABLE sub_committees
@@ -56,8 +56,9 @@ CREATE TABLE sessions(
 );
 
 CREATE TABLE hotel_rooms(
-    room_number INT NOT null PRIMARY KEY,
-    number_of_Beds INT NOT null
+    room_number INT NOT null,
+    number_of_beds INT NOT null,
+    PRIMARY KEY (room_number, number_of_beds)
 );
 
 CREATE TABLE students(
@@ -103,12 +104,14 @@ CREATE TABLE sponsors(
 CREATE TABLE job_ads(
     sponsor_company_id VARCHAR(9) NOT null,
     job_title VARCHAR(30) NOT null,
-    location VARCHAR(30),
+    city VARCHAR(30),
+    province VARCHAR(30),
     pay_rate VARCHAR(30),
-    PRIMARY KEY (sponsor_company_id, job_title, location),
+    PRIMARY KEY (sponsor_company_id, job_title),
     FOREIGN KEY (sponsor_company_id) REFERENCES sponsor_companies(id)
     ON DELETE CASCADE
 );
+
 
 INSERT INTO committee_members (id,first_name,last_name,phone_number,email,committee_name) VALUES 
 ('3000000000', 'Patrik', 'Smith', '6132220001', 'e1234@hotmail.com', null),
@@ -158,7 +161,6 @@ INSERT INTO attendees(id,first_name,last_name,phone_number,email) VALUES
 ('0010181124', 'Yuanhao', 'Wan', '999999999', 'yuanhao@gmail.com'),
 ('0010181125', 'Grace', 'Richards', '999999999', 'grace@gmail.com');
 
-
 INSERT INTO registration_roles(role,rate) VALUES
 ('Student',50),
 ('Professional',100),
@@ -206,10 +208,10 @@ INSERT INTO sponsor_companies(id,name,number_emails_sent,sponsor_level) VALUES
 ('012012012','Ubsoft',0,'Gold'),
 ('100000000', 'Alphabet Inc.', 4, 'Platinum');
 
-INSERT INTO job_ads(sponsor_company_id,job_title,location,pay_rate) VALUES
-('012012012','Senior Game Designer','Toronto','70000'),
-('012012012','VFX Artist','Toronto','80000'),
-('100000000','Software developer','Waterloo','90000');
+INSERT INTO job_ads(sponsor_company_id,job_title,province,city,pay_rate) VALUES
+('012012012','Senior Game Designer','ON','Toronto','70000'),
+('012012012','VFX Artist','ON','Toronto','80000'),
+('100000000','Software developer','ON','Waterloo','90000');
 
 INSERT INTO sessions (name, room_location, start_date_time, end_date_time, speaker_id) VALUES 
 ('Global warming', 'room1100', '2019-02-07 08:30:00', '2019-02-07 12:00:00', '0010181111'), 
