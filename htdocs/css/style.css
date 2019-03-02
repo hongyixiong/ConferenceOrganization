@@ -1,0 +1,224 @@
+/*****************************************************************************/
+/* General 
+Yuhang Cao ID: 10201134;
+*/
+/*****************************************************************************/
+html{
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "PT Serif", serif;
+	font-size: 1.0rem;
+	line-height: 1.4;
+	background-color: black;
+	height:100%;
+}
+
+h1, h2, h3, h4, h5, h6,
+header nav ul li,
+th,
+#voting-history .voted,
+.statement {
+	font-family: "Josefin Sans", sans-serif;
+	font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.15);
+	margin: 1.0em 0 0.5em 0;
+}
+
+h1 	{	font-size: 2.0rem;	}
+h2 	{	font-size: 1.75rem;	}
+h3 	{	font-size: 1.5rem;	}
+h4 	{	font-size: 1.375rem;	}
+h5 	{	font-size: 1.25rem;	}
+h6 	{	font-size: 1.125rem;	}
+
+a {
+	color: #00008b;
+}
+
+a:hover {
+	color: #000080;
+	text-decoration: none;
+}
+
+p {
+	margin: 1rem 0;	
+}
+
+ul, ol {
+	padding-left: 32px;	
+	margin: 0.5rem 0 1.0rem 0;	
+}
+
+img {
+	max-width: 100%;
+	max-height: 150px;
+}
+
+table {
+	border-collapse: collapse;	
+}
+
+th, td {
+	padding: 5px 10px;
+	border: 1px solid black;
+	min-width: 40px; 
+}
+
+th {
+	background-color: #f1f1f1;	
+}
+
+.image-container {
+	text-align: center;	
+}
+#body-container{
+	display:flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: stretch;
+	background-color: #ddd;
+}
+
+/*****************************************************************************/
+/* Header */
+/*****************************************************************************/
+header {
+	color: #fff;
+	background-color: #000;
+	text-align: center;
+	min-width: 250px;
+	max-width: 400px;
+	flex:1;
+}
+
+header img {
+	border-radius: 50%;
+	padding: 20px 0;
+}
+
+header nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+header nav ul li a {
+	display: block;
+	margin: 0;
+	padding: 15px 20px;
+	color: #fff;
+	border-top: 1px solid #fff;
+	font-size: 1.125rem;
+	text-decoration: none;
+	transition: color 0.5s;
+	transition: background-color 0.5s;
+}
+
+header nav ul li a:hover {
+	color: #000;
+	background-color: #fff;
+	text-decoration: none;
+}
+
+
+/*****************************************************************************/
+/* Main Content */
+/*****************************************************************************/
+#shadow{
+ width:100%; 
+ height:100%; 
+ background-color:#000; 
+ filter:alpha(opacity=75); 
+ -moz-opacity:0.5; 
+ opacity:0.75; 
+ position:absolute; 
+ left:0px; 
+ top:0px; 
+ z-index:1000;  
+ display: none;
+}
+#outer-div{
+	flex:auto;
+max-width: calc(100% - 250px);
+}
+
+#main-content {
+	background-color: #fff;
+	margin: 20px;
+	padding: 20px 20px 40px 20px;
+}
+
+#page-title {
+	text-align: center;
+}
+
+.highlight {
+	padding: 10px;
+	text-align: center;
+	font-style: italic;
+	background-color: #f1f1f1;
+	box-shadow: 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+#voting-history .voted {
+	text-align: center;	
+}
+
+#voting-history .statement {
+	background-color: #f1f1f1;
+	font-weight: bold;
+	text-align: center;
+}
+
+#overlay-msg{
+	display: none;
+	background-color: white;
+	text-align: center;
+	border:20px;
+	padding:20px;
+	min-width: 150px;
+	max-width: 400px;
+	font-size: 16px;
+	border-radius: 8px;
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1001;
+}
+
+.variable{
+	padding: 0 0;
+	margin: 0 20px;
+}
+
+.variable img{
+	padding: 0 10px;
+	margin: 0;
+}
+
+.variable .slick-slide img {
+	max-height: 200px;
+}
+
+.variable .slick-prev::before, 
+.variable .slick-next::before {
+	color: #000;	
+}	
+
+/*****************************************************************************/
+/* Footer */
+/*****************************************************************************/
+footer {
+	color: #ddd;
+	background-color: white;	
+	padding: 20px;
+	margin: 20px 20px 40px 20px;
+	text-align: center;
+}
