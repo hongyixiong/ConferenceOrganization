@@ -18,7 +18,7 @@ initial-scale=1">
         <img src="./img/placeholder_personal_portrait.jpg" alt="Portrait of River Lawrence"/>
     </a>
     <nav>
-        <ul>
+        <ul class="navbar">
             <li><a href="index.html">Home</a></li>
             <li><a href="./subcommittee.html">Sub-Committee</a></li>
             <li><a href="./schedule.html">Schedule</a></li>
@@ -33,19 +33,17 @@ initial-scale=1">
 <div id="main-content">
     <h1 id="page-title">Hotel Rooms</h1>
     <ul>
-    <?php
-    $pdo = new PDO('mysql:host=localhost;dbname=conferenceorganization',"root","");
-    $sql = "select room_number from hotel_rooms";
-    $stmt = $pdo -> prepare($sql);
+        <?php
+        $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization',"root","");
+        $sql = "select room_number from hotel_rooms";
+        $stmt = $pdo -> query($sql);
 
-    echo "<li>yes</li>";
-    while ($item = $stmt->fetch()){
-        echo "<li>".$item."</li>";
-
-    }
-    ?>
+        while ($item = $stmt->fetch()){
+            echo "<li><a href='#'>".$item["room_number"]."</a></li>";
+        }
+        ?>
     </ul>
-    <p>I endeavour to answer all emails and return all calls within two business days. If the matter is urgent, please include &quot;Urgent&quot; in the subject line of your email or use it in the first few words of your text.</p>
+
 
 </div> <!-- #main-content -->
 
