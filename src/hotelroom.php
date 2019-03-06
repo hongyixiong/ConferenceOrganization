@@ -31,16 +31,27 @@
 
 <div id="main-content">
     <h1 id="page-title">Hotel Rooms</h1>
-    <ul>
-        <?php
-        $pdo = new PDO('mysql:host=localhost;dbname=conferenceorganization', "root", "");
-        $sql = "select room_number from hotel_rooms";
-        $stmt = $pdo -> query($sql);
 
-        while ($item = $stmt->fetch()){
-            echo "<li><a href='#'>".$item["room_number"]."</a></li>";
-        }
-        ?>
+    <br>
+    <form action="php/indieroom.php" method="get">
+        Room Number: <input type="text" name="roomnumber"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+
+    <ul>
+        <table>
+            <th>Room List</th>
+            <?php
+            $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
+            $sql = "select room_number from hotel_rooms";
+            $stmt = $pdo->query($sql);
+
+            while ($item = $stmt->fetch()) {
+                echo "<tr><td>" . $item["room_number"] . "</td></tr>";
+            }
+            ?>
+        </table>
     </ul>
 
 
