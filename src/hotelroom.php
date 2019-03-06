@@ -32,15 +32,19 @@ initial-scale=1">
 
 <div id="main-content">
     <h1 id="page-title">Hotel Rooms</h1>
+    <ul>
     <?php
-//    ERROR
     $pdo = new PDO('mysql:host=localhost;dbname=conferenceorganization',"root","");
     $sql = "select room_number from hotel_rooms";
+    $stmt = $pdo -> prepare($sql);
 
-    while ($row = $sql->fetch()){
-        echo "<tr>.$row.</tr>";
+    echo "<li>yes</li>";
+    while ($item = $stmt->fetch()){
+        echo "<li>".$item."</li>";
+
     }
     ?>
+    </ul>
     <p>I endeavour to answer all emails and return all calls within two business days. If the matter is urgent, please include &quot;Urgent&quot; in the subject line of your email or use it in the first few words of your text.</p>
 
 </div> <!-- #main-content -->
