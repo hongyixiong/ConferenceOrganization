@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Conference Organizing System | Hotel Room</title>
     <meta charset="utf-8" />
     <meta name="author" content="Group 99"/>
-    <meta name="viewport" content="width=device-width,
-initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif|Josefin+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -22,7 +21,7 @@ initial-scale=1">
             <li><a href="index.html">Home</a></li>
             <li><a href="./subcommittee.html">Sub-Committee</a></li>
             <li><a href="./schedule.html">Schedule</a></li>
-            <li><a href="./sponsor.html">Sponsor</a></li>
+            <li><a href="sponsor.php">Sponsor</a></li>
             <li><a href="./attendee.html">Attendee</a></li>
             <li><a href="./hotelroom.php">Hotel Room</a></li>
             <li><a href="./function.html">Function</a></li>
@@ -34,7 +33,7 @@ initial-scale=1">
     <h1 id="page-title">Hotel Rooms</h1>
     <ul>
         <?php
-        $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization',"root","");
+        $pdo = new PDO('mysql:host=localhost;dbname=conferenceorganization', "root", "");
         $sql = "select room_number from hotel_rooms";
         $stmt = $pdo -> query($sql);
 
