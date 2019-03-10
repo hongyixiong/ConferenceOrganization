@@ -37,7 +37,7 @@
 				<li><a href="./schedule.html">Schedule</a></li>
 				<li><a href="sponsor.php">Sponsor</a></li>
                 <li><a href="./attendee.html">Attendee</a></li>
-                <li><a href="./hotelroom.html">Hotel Room</a></li>
+                <li><a href="./hotelroom.php">Hotel Room</a></li>
                 <li><a href="./function.html">Function</a></li>
 			</ul>		
 		</nav>
