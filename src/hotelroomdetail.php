@@ -32,25 +32,23 @@
 <div id="main-content">
     <h1 id="page-title">Hotel Rooms</h1>
 
-<!--    <br>-->
-<!--    <form action="php/indieroom.php" method="get">-->
-<!--        Room Number:-->
-<!--        <input type="text" name="roomnumber"><br>-->
-<!--        <input type="submit" value="333">-->
-<!--    </form>-->
-<!--    <br>-->
+    <br>
+    <form action="php/indieroom.php" method="get">
+        Room Number: <input type="text" name="roomnumber"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
 
     <ul>
         <table>
-            <th>Room List</th>
+            <th>Room Detail</th>
             <?php
             $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
             $sql = "select room_number from hotel_rooms";
             $stmt = $pdo->query($sql);
 
             while ($item = $stmt->fetch()) {
-            echo "<tr><td><form action='hotelroomdetail.php' method='get'>";
-            echo "<input type='submit' name=".$item['room_number']." value=".$item['room_number']." </form></td></tr>";
+            echo "<tr><td><a href=\"./index.html\">". $item["room_number"] ."</a></td></tr>";
             }
             ?>
         </table>
