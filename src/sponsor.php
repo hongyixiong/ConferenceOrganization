@@ -19,7 +19,7 @@
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
-				<li><a href="./subcommittee.html">Sub-Committee</a></li>
+				<li><a href="subcommittee.php">Sub-Committee</a></li>
 				<li><a href="./schedule.html">Schedule</a></li>
                 <li><a href="./sponsor.php">Sponsor</a></li>
                 <li><a href="./attendee.html">Attendee</a></li>
@@ -37,7 +37,7 @@
                 <th>Level of sponsorship</th>
             </tr>
             <?php
-            $pdo = new PDO('mysql:host=localhost;dbname=conferenceorganization', "root", "");
+            $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
             $sql = "Select name, sponsor_level from sponsor_companies;";
             $stmt = $pdo->query($sql);
 

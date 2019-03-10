@@ -19,7 +19,7 @@
     <nav>
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
-            <li><a href="./subcommittee.html">Sub-Committee</a></li>
+            <li><a href="subcommittee.php">Sub-Committee</a></li>
             <li><a href="./schedule.html">Schedule</a></li>
             <li><a href="sponsor.php">Sponsor</a></li>
             <li><a href="./attendee.html">Attendee</a></li>
@@ -43,6 +43,7 @@
         <table>
             <th>Room Detail</th>
             <?php
+            $room_num = $POST[""];
             $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
             $sql = "select room_number from hotel_rooms";
             $stmt = $pdo->query($sql);

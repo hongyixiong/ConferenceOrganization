@@ -116,6 +116,12 @@ header nav ul li a:hover {
 /* Drop Down */
 /*****************************************************************************/
 
+/* The dropdown container */
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
 /* Dropdown button */
 .dropdown .dropbtn {
 	font-size: 16px;

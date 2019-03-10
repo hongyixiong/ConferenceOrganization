@@ -19,7 +19,7 @@
     <nav>
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
-            <li><a href="./subcommittee.html">Sub-Committee</a></li>
+            <li><a href="subcommittee.php">Sub-Committee</a></li>
             <li><a href="./schedule.html">Schedule</a></li>
             <li><a href="sponsor.php">Sponsor</a></li>
             <li><a href="./attendee.html">Attendee</a></li>
@@ -49,7 +49,7 @@
             $stmt = $pdo->query($sql);
 
             while ($item = $stmt->fetch()) {
-            echo "<tr><td><form action='hotelroomdetail.php' method='get'>";
+            echo "<tr><td class='roomlink'><form action='hotelroomdetail.php' method='get'>";
             echo "<input type='submit' name=".$item['room_number']." value=".$item['room_number']." </form></td></tr>";
             }
             ?>

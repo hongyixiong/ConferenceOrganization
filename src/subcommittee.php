@@ -19,7 +19,21 @@
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
-				<li><a href="./subcommittee.html">Sub-Committee</a></li>
+				<li class="dropdown">
+					<a href="subcommittee.php">Sub-Committee</a>
+					<div class="dropdown-content">
+                        <?php
+                        $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
+                        $sql = "select name from sub_committees";
+                        $stmt = $pdo->query($sql);
+
+                        while ($item = $stmt->fetch()) {
+                            echo "<a href=\"./subcommittee.php\">". $item["name"] ."</a>";
+                        }
+                        ?>
+					</div>
+
+				</li>
 				<li><a href="./schedule.html">Schedule</a></li>
 				<li><a href="sponsor.php">Sponsor</a></li>
                 <li><a href="./attendee.html">Attendee</a></li>
@@ -30,8 +44,8 @@
 	</header>
 
 	<div id="main-content">
-		<h1 id="page-title">Contact</h1>
-		
+
+		<h1 id="page-title">Contact</h1
 		<ul>
 			<li>Email: river.lawrence@district18.on.ca</li>
 			<li>Cell: (555) 555-5555</li>
