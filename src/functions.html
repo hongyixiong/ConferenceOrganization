@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-	<title>Conference Organizing System | Sub-Committee</title>
+    <title>Conference Organizing System | Functions</title>
 	<meta charset="utf-8" />
 	<meta name="author" content="Group 99"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=PT+Serif|Josefin+Sans" rel="stylesheet"> 
 	<link rel="stylesheet" href="css/style.css">	
 	<link rel="stylesheet" href="css/responsive.css">	
@@ -19,33 +19,19 @@
 		<nav>
 			<ul>
 				<li><a href="index.html">Home</a></li>
-				<li class="dropdown">
-					<a href="subcommittee.php">Sub-Committee</a>
-					<div class="dropdown-content">
-                        <?php
-                        $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
-                        $sql = "select name from sub_committees";
-                        $stmt = $pdo->query($sql);
-
-                        while ($item = $stmt->fetch()) {
-                            echo "<a href=\"./subcommittee.php\">". $item["name"] ."</a>";
-                        }
-                        ?>
-					</div>
-
-				</li>
+                <li><a href="subcommittees.php">Sub-Committees</a></li>
 				<li><a href="./schedule.html">Schedule</a></li>
-				<li><a href="sponsor.php">Sponsor</a></li>
-                <li><a href="./attendee.html">Attendee</a></li>
-                <li><a href="./hotelroom.html">Hotel Room</a></li>
-                <li><a href="./function.html">Function</a></li>
-			</ul>		
+                <li><a href="sponsors.php">Sponsors</a></li>
+                <li><a href="attendees.html">Attendees</a></li>
+                <li><a href="hotelrooms.html">Hotel Rooms</a></li>
+                <li><a href="./functions.html">Functions</a></li>
+            </ul>
 		</nav>
 	</header>
 
 	<div id="main-content">
-
-		<h1 id="page-title">Contact</h1
+		<h1 id="page-title">Contact</h1>
+		
 		<ul>
 			<li>Email: river.lawrence@district18.on.ca</li>
 			<li>Cell: (555) 555-5555</li>

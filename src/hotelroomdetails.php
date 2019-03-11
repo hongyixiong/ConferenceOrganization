@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Conference Organizing System | Hotel Room</title>
+    <title>Conference Organizing System | Hotel Rooms</title>
     <meta charset="utf-8" />
     <meta name="author" content="Group 99"/>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -19,12 +19,12 @@
     <nav>
         <ul class="navbar">
             <li><a href="index.html">Home</a></li>
-            <li><a href="subcommittee.php">Sub-Committee</a></li>
+            <li><a href="subcommittees.php">Sub-Committees</a></li>
             <li><a href="./schedule.html">Schedule</a></li>
-            <li><a href="sponsor.php">Sponsor</a></li>
-            <li><a href="./attendee.html">Attendee</a></li>
-            <li><a href="./hotelroom.php">Hotel Room</a></li>
-            <li><a href="./function.html">Function</a></li>
+            <li><a href="sponsors.php">Sponsors</a></li>
+            <li><a href="attendees.html">Attendees</a></li>
+            <li><a href="hotelrooms.php">Hotel Rooms</a></li>
+            <li><a href="functions.html">Functions</a></li>
         </ul>
     </nav>
 </header>
@@ -32,25 +32,24 @@
 <div id="main-content">
     <h1 id="page-title">Hotel Rooms</h1>
 
-<!--    <br>-->
-<!--    <form action="php/indieroom.php" method="get">-->
-<!--        Room Number:-->
-<!--        <input type="text" name="roomnumber"><br>-->
-<!--        <input type="submit" value="333">-->
-<!--    </form>-->
-<!--    <br>-->
+    <br>
+    <form action="php/indieroom.php" method="get">
+        Room Number: <input type="text" name="roomnumber"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <br>
 
     <ul>
         <table>
-            <th>Room List</th>
+            <th>Room Detail</th>
             <?php
+            $room_num = $POST[""];
             $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
             $sql = "select room_number from hotel_rooms";
             $stmt = $pdo->query($sql);
 
             while ($item = $stmt->fetch()) {
-            echo "<tr><td class='roomlink'><form action='hotelroomdetail.php' method='get'>";
-            echo "<input type='submit' name=".$item['room_number']." value=".$item['room_number']." </form></td></tr>";
+            echo "<tr><td><a href=\"./index.html\">". $item["room_number"] ."</a></td></tr>";
             }
             ?>
         </table>
