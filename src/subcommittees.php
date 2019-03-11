@@ -28,7 +28,7 @@
                         $stmt = $pdo->query($sql);
 
                         while ($item = $stmt->fetch()) {
-                            echo ">" . $item["name"] . "</a>";
+                            echo "<a href=\"./subcommittee.php\">". $item["name"] ."</a>";
                         }
                         ?>
 					</div>
