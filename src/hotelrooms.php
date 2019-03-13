@@ -13,18 +13,18 @@
 
 <body>
 <header>
-    <a href="index.html">
+    <a href="index.php">
         <img src="./img/placeholder_personal_portrait.jpg" alt="Portrait of River Lawrence"/>
     </a>
     <nav>
         <ul class="navbar">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="subcommittees.php">Sub-Committees</a></li>
-            <li><a href="./schedule.html">Schedule</a></li>
+            <li><a href="schedule.php">Schedule</a></li>
             <li><a href="sponsors.php">Sponsors</a></li>
-            <li><a href="attendees.html">Attendees</a></li>
+            <li><a href="attendees.php">Attendees</a></li>
             <li><a href="./hotelrooms.php">Hotel Rooms</a></li>
-            <li><a href="functions.html">Functions</a></li>
+            <li><a href="functions.php">Functions</a></li>
         </ul>
     </nav>
 </header>
@@ -39,28 +39,27 @@
 <!--        <input type="submit" value="333">-->
 <!--    </form>-->
 <!--    <br>-->
-
-    <ul>
-        <table>
-            <th>Room List</th>
+    <div class="list-nav">
+        <ul>
             <?php
             $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
             $sql = "select room_number from hotel_rooms";
             $stmt = $pdo->query($sql);
 
             while ($item = $stmt->fetch()) {
-                echo "<tr><td class='roomlink'><form action='hotelroomdetails.phpp' method='get'>";
-            echo "<input type='submit' name=".$item['room_number']." value=".$item['room_number']." </form></td></tr>";
+    //                echo "<tr><td class='roomlink'><form action='hotelroomdetails.phpp' method='get'>";
+    //            echo "<input type='submit' name=".$item['room_number']." value=".$item['room_number']." </form></td></tr>";
+                echo "<li><a href='hotelroomdetails.php?rm_num=". $item["room_number"] ."'>". $item['room_number'] ."</a></li>";
             }
             ?>
-        </table>
-    </ul>
+        </ul>
+    </div>
 
 
 </div> <!-- #main-content -->
 
 <footer>
-    <img src="./img/drapeau_ontario-ontario_flag.jpg" alt="Ontario provincial flag"/>
+    <img src="./img/qflag.jpg" alt="Ontario provincial flag"/>
 </footer>
 
 </body>

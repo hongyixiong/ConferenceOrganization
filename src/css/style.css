@@ -116,12 +116,6 @@ header nav ul li a:hover {
 /* Drop Down */
 /*****************************************************************************/
 
-/* The dropdown container */
-.dropdown {
-	float: left;
-	overflow: hidden;
-}
-
 /* Dropdown button */
 .dropdown .dropbtn {
 	font-size: 16px;
@@ -134,14 +128,6 @@ header nav ul li a:hover {
 	margin: 0; /* Important for vertical align on mobile phones */
 }
 
-/* Add a red background color to navbar links on hover */
-.dropbtn:hover {
-	 background-color: red;
- }
-
-.dropbtn {
-	background-color: red;
-}
 /* Dropdown content (hidden by default) */
 .dropdown-content {
 	display: none;
@@ -252,6 +238,30 @@ footer {
 	min-width: 150px;
 	max-width: 400px;
 }
+
+
+/*****************************************************************************/
+/* list-nav */
+/*****************************************************************************/
+.list-nav ul {
+	list-style:none; }
+.list-nav ul li {
+	font-size:18px; }
+
+.list-nav ul li a {
+	display:block;
+	width:300px;
+	height:28px;
+	background-color:#fff;
+	border: 2px solid #222;
+	margin: 5px;
+	padding: 2px;
+	padding-left:10px;
+	text-decoration:none;
+	color:#000; }
+
+.list-nav ul li a:hover {
+	box-shadow:10px 10px 20px rgba(0, 0, 0, 0.5) ; }
 
 
 /*****************************************************************************/
