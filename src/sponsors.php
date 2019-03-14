@@ -12,25 +12,39 @@
 </head>
 
 <body>
-	<header>
-		<a href="index.php">
-			<img src="./img/placeholder_personal_portrait.jpg" alt="Portrait of River Lawrence"/>
-		</a>
-		<nav>
-			<ul>
-				<li><a href="index.php">Home</a></li>
-                <li><a href="subcommittees.php">Sub-Committees</a></li>
-				<li><a href="schedule.php">Schedule</a></li>
-                <li><a href="./sponsors.php">Sponsors</a></li>
+    <header>
+        <!--Should be included in all .php and .html files-->
+        <a href="index.php">
+            <img src="./img/placeholder_personal_portrait.jpg" alt="Portrait of River Lawrence"/>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li class="dropdown">
+                    <a href="subcommittees.php">Sub-Committees</a>
+                    <div class="dropdown-content">
+                        <?php
+                        $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
+                        $sql = "select name from sub_committees";
+                        $stmt = $pdo->query($sql);
+
+                        while ($item = $stmt->fetch()) {
+                            echo "<a href='subcommitteedetails.php?name=". $item["name"] ."'>". $item['name'] ."</a>";
+                        }
+                        ?>
+                    </div>
+                </li>
+                <li><a href="schedule.php">Schedule</a></li>
+                <li><a href="sponsors.php">Sponsors</a></li>
                 <li><a href="attendees.php">Attendees</a></li>
                 <li><a href="hotelrooms.php">Hotel Rooms</a></li>
                 <li><a href="functions.php">Functions</a></li>
-			</ul>
-		</nav>
-	</header>
+            </ul>
+        </nav>
+    </header>
 
 	<div id="main-content">
-        <h1 id="page-title">Sponsor</h1>
+        <h1 id="page-title">Sponsor Companies</h1>
         <table>
             <tr>
                 <th>Company name</th>
@@ -38,11 +52,11 @@
             </tr>
             <?php
             $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
-            $sql = "Select name, sponsor_level from sponsor_companies;";
+            $sql = "Select name,sponsor_level,id from sponsor_companies;";
             $stmt = $pdo->query($sql);
 
             while ($item = $stmt->fetch()) {
-                echo "<tr><td>" . $item["name"] . "</td><td>" . $item["sponsor_level"] . "</td></tr>";
+                echo "<tr><td><a href='jobs.php?comp_id=".$item["id"]."'>". $item["name"] ."</a></td><td>" . $item["sponsor_level"] . "</td></tr>";
             }
             ?>
         </table>

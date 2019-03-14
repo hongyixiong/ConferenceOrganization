@@ -58,7 +58,7 @@
         $stmt = $pdo->query($sql);
 
         while ($item = $stmt->fetch()) {
-            echo "<tr><td>".$item['first_name']."</td><td>".$item['last_name']."</td></tr>";
+            echo "<tr><td>".$item['first_name']." ".$item['last_name']."</td></tr>";
         }
         ?>
     </table>

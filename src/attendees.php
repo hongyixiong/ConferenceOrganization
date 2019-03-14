@@ -30,15 +30,52 @@
 	</header>
 
 	<div id="main-content">
-		<h1 id="page-title">Contact</h1>
-		
-		<ul>
-			<li>Email: river.lawrence@district18.on.ca</li>
-			<li>Cell: (555) 555-5555</li>
-		</ul>
-		
-		<p>I endeavour to answer all emails and return all calls within two business days. If the matter is urgent, please include &quot;Urgent&quot; in the subject line of your email or use it in the first few words of your text.</p>
-			
+		<h1 id="page-title">Attendees</h1>
+        <div class="attendee_tb">
+            <table>
+                <th>Students</th>
+                <?php
+                $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
+                $sql = "select first_name,last_name from attendees where id in (select attendee_id from students)";
+                $stmt = $pdo->query($sql);
+
+                while ($item = $stmt->fetch()) {
+                    echo "<tr><td>".$item['first_name']." ".$item['last_name']."</td></tr>";
+                }
+                ?>
+            </table>
+        </div>
+
+        <div class="attendee_tb">
+            <table>
+                <th>Professionals</th>
+                <?php
+                $sql = "select first_name,last_name from attendees where id in (select attendee_id from professionals)";
+                $stmt = $pdo->query($sql);
+
+                while ($item = $stmt->fetch()) {
+                    echo "<tr><td>".$item['first_name']." ".$item['last_name']."</td></tr>";
+                }
+                ?>
+            </table>
+        </div>
+
+        <div class="attendee_tb">
+            <table>
+                <th>Sponsors</th>
+                <?php
+                $sql = "select first_name,last_name from attendees where id in (select attendee_id from sponsors)";
+                $stmt = $pdo->query($sql);
+
+                while ($item = $stmt->fetch()) {
+                    echo "<tr><td>".$item['first_name']." ".$item['last_name']."</td></tr>";
+                }
+                ?>
+            </table>
+        </div>
+
+
+
 	</div> <!-- #main-content -->
 		
 	<footer>

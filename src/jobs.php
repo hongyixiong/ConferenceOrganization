@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>Conference Organizing System | Hotel Rooms</title>
+    <title>Conference Organizing System | Sponsors</title>
     <meta charset="utf-8" />
     <meta name="author" content="Group 99"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=PT+Serif|Josefin+Sans" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -44,42 +44,32 @@
 </header>
 
 <div id="main-content">
-    <h1 id="page-title">Hotel Rooms
+    <h1 id="page-title">
         <?php
-            $rm_num= $_GET['rm_num'];
-            echo $rm_num;
+        $comp_id = $_GET['comp_id'];
+        echo $comp_id;
         ?>
+        Jobs
     </h1>
-
-<!--    <br>-->
-<!--    <form action="php/indieroom.php" method="get">-->
-<!--        Room Number: <input type="text" name="roomnumber"><br>-->
-<!--        <input type="submit" value="Submit">-->
-<!--    </form>-->
-<!--    <br>-->
-
     <table>
-    <?php
+        <tr>
+            <th>Job Title</th>
+            <th>City</th>
+            <th>Province</th>
+            <th>Pay Rate</th>
+        </tr>
+        <?php
+        $sql = "Select job_title,city,province,pay_rate from job_ads where sponsor_company_id='".$comp_id."'";
+        $stmt = $pdo->query($sql);
 
-//            $room_num = $POST[""];
-//            $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
-//            $sql = "select room_number from hotel_rooms";
-//            $stmt = $pdo->query($sql);
-//
-//            while ($item = $stmt->fetch()) {
-//            echo "<tr><td><a href=\"./index.php\">". $item["room_number"] ."</a></td></tr>";
-//            }
-    $sql="SELECT first_name,last_name from attendees WHERE id in (SELECT attendee_id FROM students WHERE hotel_room_number='".$rm_num."')";
-    $stmt = $pdo->query($sql);
-
-    while ($item = $stmt->fetch()) {
-        echo "<tr><td>". $item["first_name"] ." ". $item["last_name"] ."</td></tr>";
-    }
-
-    ?>
+        while ($item = $stmt->fetch()) {
+            echo "<tr><td>".$item['job_title']."</td>";
+            echo "<td>".$item['city']."</td>";
+            echo "<td>".$item['province']."</td>";
+            echo "<td>".$item['pay_rate']."</td></tr>";
+        }
+        ?>
     </table>
-
-
 </div> <!-- #main-content -->
 
 <footer>
