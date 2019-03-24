@@ -42,8 +42,7 @@
     <div class="list-nav">
         <ul>
             <?php
-            //            $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
-            $pdo = new PDO('mysql:host=localhost:3306;dbname=conferenceorganization', "root", "");
+            include 'pdo.php';
             $sql = "select room_number from hotel_rooms";
             $stmt = $pdo->query($sql);
 

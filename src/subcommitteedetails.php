@@ -23,8 +23,7 @@
                 <a href="subcommittees.php">Sub-Committees</a>
                 <div class="dropdown-content">
                     <?php
-                    //                    $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
-                    $pdo = new PDO('mysql:host=localhost:3306;dbname=conferenceorganization', "root", "");
+                    include 'pdo.php';
                     $sql = "select name from sub_committees";
                     $stmt = $pdo->query($sql);
 
@@ -48,8 +47,6 @@
     <h1 id="page-title">
         <?php
         $name = $_GET['name'];
-        //        $pdo = new PDO('mysql:host=localhost:3306;dbname=conferenceorganization', "root", "");
-        //        $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
         echo $name;
         ?>
     </h1>

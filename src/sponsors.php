@@ -24,8 +24,7 @@
                     <a href="subcommittees.php">Sub-Committees</a>
                     <div class="dropdown-content">
                         <?php
-                        //                        $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
-                        $pdo = new PDO('mysql:host=localhost:3306;dbname=conferenceorganization', "root", "");
+                        include 'pdo.php';
                         $sql = "select name from sub_committees";
                         $stmt = $pdo->query($sql);
 
@@ -52,8 +51,6 @@
                 <th>Level of sponsorship</th>
             </tr>
             <?php
-            //            $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
-            //            $pdo = new PDO('mysql:host=localhost:3306;dbname=conferenceorganization', "root", "");
             $sql = "Select name,sponsor_level,id from sponsor_companies;";
             $stmt = $pdo->query($sql);
 
