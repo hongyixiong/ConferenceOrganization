@@ -18,7 +18,7 @@
 			<img src="./img/placeholder_personal_portrait.jpg" alt="Portrait of River Lawrence"/>
 		</a>
         <?php
-        include 'navigationmenu.php';
+        include 'include\navigationmenu.php';
         ?>
 	</header>
 

@@ -17,7 +17,7 @@
         <img src="./img/placeholder_personal_portrait.jpg" alt="Portrait of River Lawrence"/>
     </a>
     <?php
-    include 'navigationmenu.php';
+    include 'include\navigationmenu.php';
     ?>
 </header>
 
@@ -34,7 +34,6 @@
     <div class="list-nav">
         <ul>
             <?php
-            include 'pdo.php';
             $sql = "select room_number from hotel_rooms";
             $stmt = $pdo->query($sql);
 
