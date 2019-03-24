@@ -16,17 +16,9 @@
 		<a href="index.php">
 			<img src="./img/placeholder_personal_portrait.jpg" alt="Portrait of River Lawrence"/>
 		</a>
-		<nav>
-			<ul>
-				<li><a href="index.php">Home</a></li>
-                <li><a href="subcommittees.php">Sub-Committees</a></li>
-				<li><a href="schedule.php">Schedule</a></li>
-                <li><a href="sponsors.php">Sponsors</a></li>
-                <li><a href="attendees.php">Attendees</a></li>
-                <li><a href="hotelrooms.php">Hotel Rooms</a></li>
-                <li><a href="functions.php">Functions</a></li>
-			</ul>		
-		</nav>
+        <?php
+        include 'navigationmenu.php';
+        ?>
 	</header>
 
 	<div id="main-content">
