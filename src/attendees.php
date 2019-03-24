@@ -35,7 +35,8 @@
             <table>
                 <th>Students</th>
                 <?php
-                $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
+                //                $pdo = new PDO('mysql:host=localhost:3307;dbname=conferenceorganization', "root", "");
+                $pdo = new PDO('mysql:host=localhost:3306;dbname=conferenceorganization', "root", "");
                 $sql = "select first_name,last_name from attendees where id in (select attendee_id from students)";
                 $stmt = $pdo->query($sql);
 
