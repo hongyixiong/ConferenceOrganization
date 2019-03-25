@@ -30,7 +30,7 @@
                 <th>Level of sponsorship</th>
             </tr>
             <?php
-            $sql = "Select name,sponsor_level,id from sponsor_companies;";
+            $sql = "Select name, sponsor_level, id from sponsor_companies;";
             $stmt = $pdo->query($sql);
 
             while ($item = $stmt->fetch()) {
