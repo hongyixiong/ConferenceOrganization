@@ -24,25 +24,21 @@
 <div id="main-content">
     <h1 id="page-title">Hotel Rooms</h1>
 
-<!--    <br>-->
-<!--    <form action="php/indieroom.php" method="get">-->
-<!--        Room Number:-->
-<!--        <input type="text" name="roomnumber"><br>-->
-<!--        <input type="submit" value="333">-->
-<!--    </form>-->
-<!--    <br>-->
     <div class="list-nav">
         <ul>
-            <?php
-            $sql = "select room_number from hotel_rooms";
-            $stmt = $pdo->query($sql);
+            <table>
+                <tr>
+                    <th>Hotel room number</th>
+                </tr>
+                <?php
+                $sql = "select room_number from hotel_rooms";
+                $stmt = $pdo->query($sql);
 
-            while ($item = $stmt->fetch()) {
-    //                echo "<tr><td class='roomlink'><form action='hotelroomdetails.phpp' method='get'>";
-    //            echo "<input type='submit' name=".$item['room_number']." value=".$item['room_number']." </form></td></tr>";
-                echo "<li><a href='hotelroomdetails.php?rm_num=". $item["room_number"] ."'>". $item['room_number'] ."</a></li>";
-            }
-            ?>
+                while ($item = $stmt->fetch()) {
+                    echo "<tr><td><a href='hotelroomdetails.php?rm_num=". $item["room_number"] ."'>". $item['room_number'] ."</a></td></tr>";
+                }
+                ?>
+            </table>
         </ul>
     </div>
 
