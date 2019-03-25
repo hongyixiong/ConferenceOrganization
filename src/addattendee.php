@@ -42,10 +42,10 @@
         <input type="text" name="email">
         <br>
         Attendee Type:
-        <select name="sponsorship_level" >
-            <option value="student">student</option>
-            <option value="professional">professional</option>
-            <option value="sponsor">sponsor</option>
+        <select name="registraion_role" >
+            <option value="student">Student</option>
+            <option value="professional">Professional</option>
+            <option value="sponsor">Sponsor</option>
         </select>
         <br>
         <input type="submit" value="Add">

@@ -24,6 +24,7 @@
 	<div id="main-content">
 		<h1 id="page-title">Attendees</h1>
         <div class="attendee_tb">
+            <img src="./img/stu_ico.png" alt="Student Icon"/>
             <table>
                 <th>Students</th>
                 <?php
@@ -38,6 +39,7 @@
         </div>
 
         <div class="attendee_tb">
+            <img src="./img/pro_ico.png" alt="Professional Icon"/>
             <table>
                 <th>Professionals</th>
                 <?php
@@ -52,6 +54,7 @@
         </div>
 
         <div class="attendee_tb">
+            <img src="./img/spo_ico.jpg" alt="Student Icon"/>
             <table>
                 <th>Sponsors</th>
                 <?php
