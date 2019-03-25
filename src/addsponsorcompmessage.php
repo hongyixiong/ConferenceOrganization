@@ -26,20 +26,30 @@
 
     <h1 id="page-title">Add Sponsorship Company</h1>
     <?php
-    $companyName = $_POST["company_name"];
-    $companyId = $_POST["company_id"];
-    $sponsorshipLevel = $_POST["sponsorship_level"];
-    echo "<h3>Hello $companyName $companyId $sponsorshipLevel</h3>";
-    if (strlen($companyName) > 50) {
-        echo "<h4>Invalid company name, must be no more than 50 characters.</h4>";
+    $companyName = trim ($_POST["company_name"]);
+    $companyId = trim ($_POST["company_id"]);
+    $sponsorshipLevel = trim ($_POST["sponsorship_level"]);
+    if (strlen($companyName) == 0 or strlen($companyName) == 0 or strlen($sponsorshipLevel) == 0) {
+        echo "<span style=\"color:red\">Must enter company name, company id, and sponsorship level.</span>";
+    } elseif (strlen($companyName) > 50) {
+        echo "<span style=\"color:red\">Invalid company name, must be no more than 50 characters.</span>";
     } elseif (strlen($companyId) > 9 or !ctype_digit($companyId)) {
-        echo "<h4>Invalid company id, must be all numerical digits and no more than 9 characters.</h4>";
+        echo "<span style=\"color:red\">Invalid company id, must be all numerical digits and no more than 9 characters.</span>";
     } else {
         try {
-            $sql = "Insert into sponsor_companies (id, name, number_emails_sent, sponsor_level) 
-                    values (?, ?, 0, ?);";
-            $stmt = $pdo->prepare($sql);
-            $stmt->execute([$companyId, $companyName, $sponsorshipLevel]);
+            $sqlValidation = "Select count(*) as id_used from sponsor_companies where Id = ?";
+            $stmtValidation = $pdo->prepare($sqlValidation);
+            $stmtValidation->execute([$companyId]);
+            $rowValidation=$stmtValidation->fetch();
+            $count = $rowValidation["id_used"];
+            if ($count > 0) {
+                echo "<span style=\"color:red\">Company id already exists, must be unique.</span>";
+            } else {
+                $sql = "Insert into sponsor_companies (id, name, number_emails_sent, sponsor_level) values (?, ?, 0, ?);";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute([$companyId, $companyName, $sponsorshipLevel]);
+                echo "<span style=\"color:green\">Sponsor company added successfully.</span>";
+            }
         } catch (Exception $e) {
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
