@@ -25,6 +25,31 @@
 <div id="main-content">
 
     <h1 id="page-title">Add Attendee</h1>
+    <form action="addattendeemessage.php" method="post">
+        Attendee Id:
+        <input type="text" name="id" required>
+        <br>
+        Attendee First Name:
+        <input type="text" name="first_name" required>
+        <br>
+        Attendee Last Name:
+        <input type="text" name="last_name" required>
+        <br>
+        Phone Number:
+        <input type="text" name="phone_number">
+        <br>
+        Email:
+        <input type="text" name="email">
+        <br>
+        Attendee Type:
+        <select name="sponsorship_level" >
+            <option value="student">student</option>
+            <option value="professional">professional</option>
+            <option value="sponsor">sponsor</option>
+        </select>
+        <br>
+        <input type="submit" value="Add">
+    </form>
 
 
 </div> <!-- #main-content -->
