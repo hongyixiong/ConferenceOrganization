@@ -22,15 +22,10 @@
 	</header>
 
 	<div id="main-content">
-		<h1 id="page-title">Contact</h1>
+		<h1 id="page-title">Schedule</h1>
+		<p> Various sessions will be held during the meeting, lasing for 2 days.</p>
 		
-		<ul>
-			<li>Email: river.lawrence@district18.on.ca</li>
-			<li>Cell: (555) 555-5555</li>
-		</ul>
 		
-		<p>I endeavour to answer all emails and return all calls within two business days. If the matter is urgent, please include &quot;Urgent&quot; in the subject line of your email or use it in the first few words of your text.</p>
-			
 	</div> <!-- #main-content -->
 		
 	<footer>
