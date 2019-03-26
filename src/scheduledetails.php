@@ -35,7 +35,7 @@
         <?php
         $day = $_GET['day'];
         $sql = "select name,room_location,cast(start_date_time as time)as start_time,cast(end_date_time as time)as end_time from sessions where DAYOFMONTH(start_date_time)= '". $day ."'";
-        $stmt = $pdo->query($sql);
+        $stmt = $pdo->query($sql); 
 
         while ($item = $stmt->fetch()) {
             echo "<tr><td>".$item['name']."</td><td>"
