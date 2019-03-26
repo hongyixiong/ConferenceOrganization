@@ -24,7 +24,7 @@
 
 <div id="main-content">
 
-    <h1 id="page-title">Delete Sponsorship Company</h1>
+    <h1 id="page-title">Delete a Sponsorship Company</h1>
 
 
 </div> <!-- #main-content -->

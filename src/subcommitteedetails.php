@@ -31,6 +31,9 @@
     </h1>
 
     <table>
+        <tr>
+            <th>Members</th>
+        </tr>
         <?php
         $sql = "select first_name,last_name from committee_members where committee_name= '". $name ."'";
         $stmt = $pdo->query($sql);

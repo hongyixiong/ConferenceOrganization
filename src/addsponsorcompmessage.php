@@ -24,7 +24,7 @@
 
 <div id="main-content">
 
-    <h1 id="page-title">Add Sponsorship Company</h1>
+    <h1 id="page-title">Add a Sponsorship Company</h1>
     <?php
     $companyName = trim ($_POST["company_name"]);
     $companyId = trim ($_POST["company_id"]);

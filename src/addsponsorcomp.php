@@ -24,7 +24,7 @@
 
 <div id="main-content">
 
-    <h1 id="page-title">Add Sponsorship Company</h1>
+    <h1 id="page-title">Add a Sponsorship Company</h1>
     <form action="addsponsorcompmessage.php" method="post">
         Company name:
         <input type="text" name="company_name">
@@ -33,7 +33,7 @@
         <input type="text" name="company_id">
         <br>
         Sponsorship level:
-        <select name="sponsorship_level" >
+        <select name="sponsorship_level">
             <?php
             $sql = "Select sponsor_level from sponsor_levels order by amount desc;";
             $stmt = $pdo->query($sql);
@@ -45,6 +45,7 @@
         </select>
         <br>
         <input type="submit" value="Add">
+        <input type="button" value="Back" onclick="history.back()">
     </form>
 
 </div> <!-- #main-content -->

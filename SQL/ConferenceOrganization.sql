@@ -1,3 +1,5 @@
+# noinspection SqlNoDataSourceInspectionForFile
+
 DROP DATABASE conferenceorganization;
 CREATE DATABASE conferenceorganization;
 
@@ -141,7 +143,7 @@ SET Committee_Name = 'Registration Committee'
 WHERE id in ('3000000004', '3000000005', '3000000006', '3000000007');
 
 UPDATE committee_members
-SET Committee_Name = 'Sponsorship committee'
+SET Committee_Name = 'Sponsorship Committee'
 WHERE id in ('3000000008', '3000000009', '3000000010');
 
 INSERT INTO attendees(id,first_name,last_name,phone_number,email) VALUES 

@@ -24,7 +24,7 @@
 
 <div id="main-content">
 
-    <h1 id="page-title">Switch Sections</h1>
+    <h1 id="page-title">Switch session's time and location</h1>
 
 
 </div> <!-- #main-content -->

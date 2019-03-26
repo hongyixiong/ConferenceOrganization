@@ -24,15 +24,15 @@
 
 	<div id="main-content">
 
-		<h1 id="page-title">Choose Functions</h1>
+		<h1 id="page-title">Choose a Function</h1>
 
         <div class="list-nav">
             <ul>
-                <li><a href="addattendee.php">Add Attendee</a> </li>
-                <li><a href="addsponsorcomp.php">Add Sponsorship Company</a> </li>
-                <li><a href="delsponsorcomp.php">Delete Sponsorship Company</a> </li>
-                <li><a href="totalintake.php">Show Total Intake of The Conference</a> </li>
-                <li><a href="switchsession.php">Switch Session</a> </li>
+                <li><a href="addattendeestep1.php">Add an attendee</a> </li>
+                <li><a href="addsponsorcomp.php">Add a sponsorship company</a> </li>
+                <li><a href="delsponsorcomp.php">Delete a sponsorship company</a> </li>
+                <li><a href="totalintake.php">Show the intakes of the conference</a> </li>
+                <li><a href="switchsession.php">Switch session time or location</a> </li>
             </ul>
         </div>
 

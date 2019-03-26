@@ -24,16 +24,16 @@
 
 <div id="main-content">
 
-    <h1 id="page-title">Add Attendee</h1>
-    <form action="addattendeemessage.php" method="post">
+    <h1 id="page-title">Add an Attendee</h1>
+    <form action="addattendeestep2.php" method="post">
         Attendee Id:
-        <input type="text" name="id" required>
+        <input type="text" name="id">
         <br>
         Attendee First Name:
-        <input type="text" name="first_name" required>
+        <input type="text" name="first_name">
         <br>
         Attendee Last Name:
-        <input type="text" name="last_name" required>
+        <input type="text" name="last_name">
         <br>
         Phone Number:
         <input type="text" name="phone_number">
@@ -42,13 +42,14 @@
         <input type="text" name="email">
         <br>
         Attendee Type:
-        <select name="registraion_role" >
+        <select name="registration_role">
             <option value="student">Student</option>
             <option value="professional">Professional</option>
             <option value="sponsor">Sponsor</option>
         </select>
         <br>
-        <input type="submit" value="Add">
+        <input type="submit" value="Next">
+        <input type="button" value="Back" onclick="history.back()">
     </form>
 
 
