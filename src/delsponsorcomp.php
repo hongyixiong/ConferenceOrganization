@@ -25,6 +25,25 @@
 <div id="main-content">
 
     <h1 id="page-title">Delete a Sponsorship Company</h1>
+    <table>
+        <caption> Sponsor Company </caption>
+        <tr><th>Company name</th><th>ID</th><th>Sponsor level</th><th>Delete</th></tr>
+
+        <?php
+            $sql = "select name,id,sponsor_level from sponsor_companies";
+            $stmt = $pdo->query($sql); 
+
+        while ($item = $stmt->fetch()) {
+            $comid = $item['id'];
+            echo "<tr><td>"
+                .$item['name']."</td><td name='id'>"
+                .$item['id']."</td><td>"
+                .$item['sponsor_level']."</td><td>";
+            echo '<a href="deletecomp.php?comid='.$comid.'">delete</a></td>'; 
+            echo '<script>console.log("'.$comid.'")</script>';
+        }
+        ?>
+</table>
 
 
 </div> <!-- #main-content -->

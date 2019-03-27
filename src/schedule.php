@@ -22,7 +22,7 @@
 	</header>
 
 	<div id="main-content">
-		<h1 id="page-title">Schedule</h1> 
+		<h1 id="page-title">Schedule</h1>
 		<p> Various sessions will be held during the meeting, lasing for 2 days.</p>
 		
 		
