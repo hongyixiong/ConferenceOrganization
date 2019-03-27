@@ -24,8 +24,8 @@
 
 	<div id="main-content">
 
-		<h1 id="page-title">Sub-Committees</h1
-		<ul>
+		<h1 id="page-title">Sub-Committees</h1>
+		<ul class="list-style">
             <?php
             $sql = "select name from sub_committees";
             $stmt = $pdo->query($sql);

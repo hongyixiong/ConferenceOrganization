@@ -26,30 +26,47 @@
 
     <h1 id="page-title">Add an Attendee</h1>
     <form action="addattendeestep2.php" method="post">
-        Attendee Id:
-        <input type="text" name="id">
-        <br>
-        Attendee First Name:
-        <input type="text" name="first_name">
-        <br>
-        Attendee Last Name:
-        <input type="text" name="last_name">
-        <br>
-        Phone Number:
-        <input type="text" name="phone_number">
-        <br>
-        Email:
-        <input type="text" name="email">
-        <br>
-        Attendee Type:
-        <select name="registration_role">
-            <option value="student">Student</option>
-            <option value="professional">Professional</option>
-            <option value="sponsor">Sponsor</option>
-        </select>
-        <br>
-        <input type="submit" value="Next">
-        <input type="button" value="Back" onclick="history.back()">
+        <ul class="form-style">
+            <li>
+                <label>Attendee Id:</label>
+                <input type="text" name="id">
+            </li>
+
+            <li>
+                <label>Attendee First Name:</label>
+                <input type="text" name="first_name">
+            </li>
+
+            <li>
+                <label>Attendee Last Name:</label>
+                <input type="text" name="last_name">
+            </li>
+
+            <li>
+                <label>Phone Number:</label>
+                <input type="text" name="phone_number">
+            </li>
+
+            <li>
+                <label>Email:</label>
+                <input type="text" name="email">
+            </li>
+
+            <li>
+                <label>Attendee Type:</label>
+                <select name="registration_role">
+                    <option value="student">Student</option>
+                    <option value="professional">Professional</option>
+                    <option value="sponsor">Sponsor</option>
+                </select>
+            </li>
+
+            <li>
+                <input type="submit" value="Add">
+                <input type="button" value="Back" onclick="history.back()">
+            </li>
+        </ul>
+
     </form>
 
 

@@ -67,10 +67,9 @@
                     echo "<input type='hidden' name='registration_role' value=$registration_role>";
 
                     // Below are additional information needed for students.
-                    echo "School name: ";
-                    echo "<input type='text' name='school'>";
-                    echo "<br>";
-                    echo "Room number: ";
+                    echo "<ul class='form-style'><li><label>School name:</label> ";
+                    echo "<input type='text' name='school'></li>";
+                    echo "<li><label>Room number: </label>";
                     echo "<select name='room_number'>";
 //                    $sql = "Select room_number from hotel_rooms order by room_number asc;";
                     $sql = "Select room_number
@@ -86,12 +85,11 @@
                     while ($item = $stmt->fetch()) {
                         echo "<option value=".$item["room_number"].">".$item["room_number"]."</option>";
                     }
-                    echo "</select>";
-                    echo "<br>";
-                    echo "Amount paid: ";
+                    echo "</select></li>";
+                    echo "<li><label>Amount paid: </label>";
                     echo "<input type='text' name='payment' value='0'>";
-                    echo "<br>";
-                    echo "<input type='submit' value='Complete'>";
+                    echo "</li>";
+                    echo "<li><input type='submit' value='Complete'></li></ul>";
                     echo "</form>";
                 }elseif ($registration_role == "professional"){
                     echo "<form action='addattendeestep3.php' method='post'>";
