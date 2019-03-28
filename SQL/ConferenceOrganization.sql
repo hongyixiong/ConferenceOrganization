@@ -216,10 +216,12 @@ INSERT INTO job_ads(sponsor_company_id,job_title,province,city,pay_rate) VALUES
 ('100000000','Software developer','ON','Waterloo','90000');
 
 INSERT INTO sessions (name, room_location, start_date_time, end_date_time, speaker_id) VALUES 
-('Global warming', 'room1100', '2019-02-07 08:30:00', '2019-02-07 12:00:00', '0010181111'), 
-('AI topics', 'room1101', '2019-02-07 08:30:00', '2019-02-07 12:00:00', '0010181116'),
-('Ancient Greece', 'room1200', '2019-02-08 13:00:00', '2019-02-08 14:15:00', '0010181121'),
-('Ancient Rome', 'room1200', '2019-02-08 14:30:00', '2019-02-08 15:45:00', '0010181121');
+('Global warming', 'room 1100', '2019-04-01 08:30:00', '2019-04-01 12:00:00', '0010181111'),
+('AI topics', 'room 1101', '2019-04-02 08:30:00', '2019-04-02 12:00:00', '0010181116'),
+('Deep learning', 'room 1101', '2019-04-03 14:30:00', '2019-04-03 16:00:00', '0010181116'),
+('Ancient Greece', 'room 1200', '2019-04-04 13:00:00', '2019-04-04 14:15:00', '0010181121'),
+('Database optimizations', 'room 1101', '2019-04-05 14:30:00', '2019-04-05 15:45:00', '0010181121'),
+('Ancient Rome', 'room 1200', '2019-04-05 14:30:00', '2019-04-05 15:45:00', '0010181121');
 
 INSERT INTO students (attendee_id, school, hotel_room_number) VALUES 
 ('0010181111', 'Queen''s University', '10'), 

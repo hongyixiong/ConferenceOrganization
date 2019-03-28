@@ -23,40 +23,37 @@
 </header>
 
 <div id="main-content">
+    <h1 id="page-title">Edit selected session</h1>
     <br>
     <?php
     $sename = $_GET["sename"];
     $newlocation = trim($_POST["newlocation"]);
+    $newdate = trim($_POST["newdate"]);
     $starttime = trim($_POST["newstart_time"]);
     $endtime = trim($_POST["newend_time"]);
-    $newdate = trim($_POST["newdate"]);
 
+    $input_start_date_time = $newdate . " ".$starttime;
+    $input_end_date_time = $newdate . " ".$endtime;
     if (strlen($newlocation) == 0) {
         echo "<span style=\"color:red\">Must enter a location.</span><br>";
         echo '<Button value = "back" onclick="history.back()">Back</Button>';
     } elseif (strlen($newlocation) > 50) {
         echo "<span style=\"color:red\">Invalid location, must be no more than 50 characters.</span><br>";
         echo '<Button value = "back" onclick="history.back()">Back</Button>';
-    } elseif ($starttime =="00:00") {
+    } elseif (strlen($starttime) == 0) {
         echo "<span style=\"color:red\">Must enter a start time.</span><br>";
         echo '<Button value = "back" onclick="history.back()">Back</Button>';
-    } elseif ($endtime =="00:00") {
+    } elseif (strlen($endtime) == 0) {
         echo "<span style=\"color:red\">Must enter a start time.</span><br>";
         echo '<Button value = "back" onclick="history.back()">Back</Button>';
-    } elseif ( strtotime($starttime) > strtotime($endtime)){
-        echo "<span style=\"color:red\">Invalid time input.</span><br>";
+    } elseif (strtotime($input_start_date_time) > strtotime($input_end_date_time)){
+        echo "<span style=\"color:red\">Invalid time input, the session must end after start time.</span><br>";
         echo '<Button value = "back" onclick="history.back()">Back</Button>';
-    }
+    } else {
+        $update="UPDATE sessions SET room_location = '$newlocation', start_date_time = '$input_start_date_time', end_date_time = '$input_end_date_time' WHERE name = $sename";
 
-    else {
-        $inputstarttime = "2019-" . $newdate . " ".$starttime;
-        $inputendtime = "2019-" . $newdate . " ".$endtime;
-        $room = "room ".$newlocation;
-
-        $update="UPDATE sessions SET room_location = '$room', start_date_time = '$inputstarttime', end_date_time = '$inputendtime' WHERE name = $sename";
- 
         $stmt =$pdo->query($update);
-        header("location: switchsession.php");
+        header("location: schedule.php");
     }
     ?>
 

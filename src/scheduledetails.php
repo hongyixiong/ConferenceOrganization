@@ -27,21 +27,30 @@
 
     <table>
         <tr>
-            <th>name of the session</th>
-            <th>location</th>
-            <th>start time</th>
-            <th>endtime</th>
+            <th>Session name</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Start time</th>
+            <th>End time</th>
+            <th>Edit</th>
         </tr>
         <?php
-        $day = $_GET['day'];
-        $sql = "select name,room_location,cast(start_date_time as time)as start_time,cast(end_date_time as time)as end_time from sessions where DAYOFMONTH(start_date_time)= '". $day ."'";
+        $date = $_GET['date'];
+        $sql = "select name,room_location,date(start_date_time) as date, time(start_date_time)as start_time,time(end_date_time)as end_time 
+                from sessions 
+                where date(start_date_time)= '". $date ."'
+                order by date, start_time";
         $stmt = $pdo->query($sql);
 
         while ($item = $stmt->fetch()) {
-            echo "<tr><td>".$item['name']."</td><td>"
+            $sename = $item['name'];
+            echo "<tr><td>"
+                .$sename."</td><td name='id'>"
                 .$item['room_location']."</td><td>"
+                .$item['date']."</td><td>"
                 .$item['start_time']."</td><td>"
-                .$item['end_time']."</td></tr>";
+                .$item['end_time']."</td><td>";
+            echo '<a href="editsessionstep1.php?sename='.$sename.'">edit</a></td>';
         }
         ?>
     </table>

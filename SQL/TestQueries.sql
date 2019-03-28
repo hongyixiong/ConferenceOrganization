@@ -36,9 +36,18 @@ from job_ads
 join sponsor_companies
 on job_ads.sponsor_company_id = sponsor_companies.id;
 
+select DISTINCT day(start_date_time) as day, month(start_date_time) as month,
+                date(start_date_time)
+from sessions
+order by month, day;
 
+select DISTINCT date(start_date_time) as date
+from sessions
+order by date;
 
-
+-- Select cast('2019-01-02 01:02:03' as datetime);
+-- Select time('2019-01-02 01:02:03');
+-- select cast('2019-01-02 01:02:03' as datetime) > cast('2019-01-02 01:02:03' as datetime);
 
 
 

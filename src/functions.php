@@ -32,7 +32,6 @@
                 <li><a href="addsponsorcomp.php">Add a sponsorship company</a> </li>
                 <li><a href="delsponsorcomp.php">Delete a sponsorship company</a> </li>
                 <li><a href="totalintake.php">Show the intakes of the conference</a> </li>
-                <li><a href="switchsession.php">Switch session time or location</a> </li>
             </ul>
         </div>
 

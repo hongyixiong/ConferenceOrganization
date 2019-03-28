@@ -19,10 +19,12 @@
            <div class="dropdown-content">
                 <?php
                 include 'pdo.php';
-                $sql = "select DAYOFMONTH(start_date_time) as day from sessions group by day";
+                $sql = "select DISTINCT date(start_date_time) as date
+                        from sessions 
+                        order by date;";
                 $stmt = $pdo->query($sql);
                 while ($item = $stmt->fetch()) {
-                    echo "<a href='scheduledetails.php?day=". $item["day"] ."'> date 2-". $item['day'] ."</a>";
+                    echo "<a href='scheduledetails.php?date=". $item["date"] ."'>" . $item['date'] ."</a>";
                 }
                 ?>
             </div>

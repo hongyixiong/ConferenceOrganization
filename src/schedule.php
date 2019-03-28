@@ -23,9 +23,36 @@
 
 	<div id="main-content">
 		<h1 id="page-title">Schedule</h1>
-		<p> Various sessions will be held during the meeting, lasing for 2 days.</p>
-		
-		
+		<p> Various sessions will be held during the conference.
+            The conference will start on Monday, April 1st and end on Friday, April 5th.</p>
+        <table>
+            <tr><th>Session name</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Start time</th>
+                <th>End time</th>
+                <th>Edit</th>
+            </tr>
+
+            <?php
+            $sql = "select name,room_location,date(start_date_time) as date,time(start_date_time)as start_time,time(end_date_time)as end_time 
+                    from sessions 
+                    order by date, start_time";
+            $stmt = $pdo->query($sql);
+
+            while ($item = $stmt->fetch()) {
+                $sename = $item['name'];
+                echo "<tr><td>"
+                    .$item['name']."</td><td name='id'>"
+                    .$item['room_location']."</td><td>"
+                    .$item['date']."</td><td>"
+                    .$item['start_time']."</td><td>"
+                    .$item['end_time']."</td><td>";
+                echo '<a href="editsessionstep1.php?sename='.$sename.'">edit</a></td>';
+            }
+            ?>
+        </table>
+
 	</div> <!-- #main-content -->
 		
 	<footer>
