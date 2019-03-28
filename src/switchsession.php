@@ -24,7 +24,32 @@
 
 <div id="main-content">
 
-    <h1 id="page-title">Switch session's time and location</h1>
+    <h1 id="page-title">Choose a session to edit</h1>
+    <table>
+        <caption> Session list </caption>
+        <tr><th>Session name</th>
+        	<th>location</th>
+        	<th>date</th>
+        	<th>start time</th>
+        	<th>end time</th>
+        	<th>Edit</th></tr>
+
+        <?php
+            $sql = "select name,room_location,DAYOFMONTH(start_date_time) as day,cast(start_date_time as time)as start_time,cast(end_date_time as time)as end_time from sessions order by start_date_time";
+            $stmt = $pdo->query($sql); 
+
+        while ($item = $stmt->fetch()) {
+            $sename = $item['name'];
+            echo "<tr><td>"
+                .$item['name']."</td><td name='id'>"
+                .$item['room_location']."</td><td>2-"
+                .$item['day']."</td><td>"
+                .$item['start_time']."</td><td>"
+                .$item['end_time']."</td><td>";
+            echo '<a href="editsessionstep1.php?sename='.$sename.'">edit</a></td>'; 
+        }
+        ?>
+</table>
 
 
 </div> <!-- #main-content -->
