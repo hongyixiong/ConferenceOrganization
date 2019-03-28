@@ -24,7 +24,7 @@
 
 	<div id="main-content">
 
-		<h1 id="page-title">Choose a Function</h1>
+		<h1 id="page-title">More Functions</h1>
 
         <div class="list-nav">
             <ul>

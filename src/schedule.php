@@ -24,7 +24,7 @@
 	<div id="main-content">
 		<h1 id="page-title">Schedule</h1>
 		<p> Various sessions will be held during the conference.
-            The conference will start on Monday, April 1st and end on Friday, April 5th.</p>
+            The conference will start on Monday, April 1st and end on Tuesday, April 2th.</p>
         <table>
             <tr><th>Session name</th>
                 <th>Location</th>

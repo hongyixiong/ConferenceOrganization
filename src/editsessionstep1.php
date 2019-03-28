@@ -71,33 +71,9 @@
         if (strtotime($date) == strtotime('2019-04-02')){
             echo "<option id='2019-04-01' value='2019-04-01'>2019-04-01</option>";
             echo "<option id='2019-04-02' value='2019-04-02' selected='selected'>2019-04-02</option>";
-            echo "<option id='2019-04-03' value='2019-04-03'>2019-04-03</option>";
-            echo "<option id='2019-04-04' value='2019-04-04'>2019-04-04</option>";
-            echo "<option id='2019-04-05' value='2019-04-05'>2019-04-05</option>";
-        } else if (strtotime($date) == strtotime('2019-04-03')){
-            echo "<option id='2019-04-01' value='2019-04-01'>2019-04-01</option>";
-            echo "<option id='2019-04-02' value='2019-04-02'>2019-04-02</option>";
-            echo "<option id='2019-04-03' value='2019-04-03' selected='selected'>2019-04-03</option>";
-            echo "<option id='2019-04-04' value='2019-04-04'>2019-04-04</option>";
-            echo "<option id='2019-04-05' value='2019-04-05'>2019-04-05</option>";
-        } else if (strtotime($date) == strtotime('2019-04-04')){
-            echo "<option id='2019-04-01' value='2019-04-01'>2019-04-01</option>";
-            echo "<option id='2019-04-02' value='2019-04-02'>2019-04-02</option>";
-            echo "<option id='2019-04-03' value='2019-04-03'>2019-04-03</option>";
-            echo "<option id='2019-04-04' value='2019-04-04' selected='selected'>2019-04-04</option>";
-            echo "<option id='2019-04-05' value='2019-04-05'>2019-04-05</option>";
-        } else if (strtotime($date) == strtotime('2019-04-05')){
-            echo "<option id='2019-04-01' value='2019-04-01'>2019-04-01</option>";
-            echo "<option id='2019-04-02' value='2019-04-02'>2019-04-02</option>";
-            echo "<option id='2019-04-03' value='2019-04-03'>2019-04-03</option>";
-            echo "<option id='2019-04-04' value='2019-04-04'>2019-04-04</option>";
-            echo "<option id='2019-04-05' value='2019-04-05' selected='selected'>2019-04-05</option>";
         } else {
-            echo "<option id='2019-04-01' value='2019-04-01'>2019-04-01</option>";
+            echo "<option id='2019-04-01' value='2019-04-01' selected='selected'>2019-04-01</option>";
             echo "<option id='2019-04-02' value='2019-04-02'>2019-04-02</option>";
-            echo "<option id='2019-04-03' value='2019-04-03'>2019-04-03</option>";
-            echo "<option id='2019-04-04' value='2019-04-04'>2019-04-04</option>";
-            echo "<option id='2019-04-05' value='2019-04-05'>2019-04-05</option>";
         }
         echo "</select>";
         ?>
