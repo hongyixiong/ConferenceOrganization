@@ -87,7 +87,7 @@
                     }
                     echo "</select></li>";
                     echo "<li><label>Amount paid: </label>";
-                    echo "<input type='text' name='payment' value='0'>";
+                    echo "<input type='text' name='payment' value='50'>";
                     echo "</li>";
                     echo "<li><input type='submit' value='Complete'></li></ul>";
                     echo "</form>";
@@ -103,7 +103,7 @@
 
                     // Below are additional information needed for professionals.
                     echo "Amount paid: ";
-                    echo "<input type='text' name='payment' value='0'>";
+                    echo "<input type='text' name='payment' value='100'>";
                     echo "<br>";
                     echo "<input type='submit' value='Complete'>";
                     echo "</form>";
