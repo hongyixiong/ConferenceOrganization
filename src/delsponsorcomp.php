@@ -44,7 +44,7 @@
         }
         ?>
 </table>
-
+    <input type="button" value="Back" onclick="history.back()">
 
 </div> <!-- #main-content -->
 

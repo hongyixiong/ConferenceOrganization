@@ -28,11 +28,11 @@
     
      <table>
         <tr>
-            <th>name</th>
-            <th>location</th>
-            <th>date</th>
-            <th>start time</th>
-            <th>end time</th>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Start time</th>
+            <th>End time</th>
         </tr>
         <?php
         $sename = $_GET['sename'];
@@ -55,19 +55,19 @@
     <br>
     <br>
     <form action="editsessionstep2.php?sename='<?php echo $sename?>'" method="post">
-        Enter room number:
+        Enter a room number:
         <input type="text" name="newlocation" value="<?php echo $room_location?>">
         <br>
-        Select date:
+        Select a date:
         <select name="newdate">
             <option value="02-07">2-7</option>
             <option value="02-08">2-8</option>
         </select>
         <br>
-        Change start time:
+        Enter start time:
         <input type="text" name="newstart_time" value="<?php echo $start_time?>">
         <br>
-        Change end time:
+        Enter end time:
         <input type="text" name="newend_time" value="<?php echo $end_time?>">
         <br>
         <input type="submit" value="Complete">

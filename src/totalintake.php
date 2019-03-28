@@ -37,12 +37,16 @@
     $intake_registration = (int) $item1["total_pay"];
     $intake_sponsorship = (int) $item2["total_pay"];
     $total = $intake_registration + $intake_sponsorship;
-    echo "The total registration fee is ".$intake_registration.".";
+    echo "<div align='left'>";
+    echo "The total registration fee is $".$intake_registration.".";
     echo "<br>";
-    echo "The total sponsorship amount is ".$intake_sponsorship.".";
+    echo "The total sponsorship amount is $".$intake_sponsorship.".";
     echo "<br>";
-    echo "The total intake is ".$total.".";
+    echo "The total intake is $".$total.".";
+    echo "</div>";
     ?>
+    <br>
+    <input type="button" value="Back" onclick="history.back()">
 </div> <!-- #main-content -->
 
 <footer>

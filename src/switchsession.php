@@ -28,10 +28,10 @@
     <table>
         <caption> Session list </caption>
         <tr><th>Session name</th>
-        	<th>location</th>
-        	<th>date</th>
-        	<th>start time</th>
-        	<th>end time</th>
+        	<th>Location</th>
+        	<th>Date</th>
+        	<th>Start time</th>
+        	<th>End time</th>
         	<th>Edit</th></tr>
 
         <?php
@@ -49,8 +49,8 @@
             echo '<a href="editsessionstep1.php?sename='.$sename.'">edit</a></td>'; 
         }
         ?>
-</table>
-
+    </table>
+    <input type="button" value="Back" onclick="history.back()">
 
 </div> <!-- #main-content -->
 
