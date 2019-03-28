@@ -22,7 +22,7 @@
 	</header>
 
 	<div id="main-content">
-		<h1 id="page-title">Conference Organisation System</h1>
+		<h1 id="page-title">Conference Organization System</h1>
 		
 		<p>This is a website for CISC 332 Project</p>
 			

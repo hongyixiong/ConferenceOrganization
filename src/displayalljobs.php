@@ -23,22 +23,29 @@
     </header>
 
 	<div id="main-content">
-        <h1 id="page-title">Sponsor Companies</h1>
-        <div align="left">
-            Click on company name to display new job positions at the company.<br>
-            Click <a href="displayalljobs.php">here</a> to display all the jobs.
-        </div>
+        <h1 id="page-title">All Available Jobs</h1>
         <table>
             <tr>
                 <th>Company name</th>
-                <th>Level of sponsorship</th>
+                <th>Job title</th>
+                <th>City</th>
+                <th>Province</th>
+                <th>Salary</th>
             </tr>
             <?php
-            $sql = "Select name, sponsor_level, id from sponsor_companies;";
+            $sql = "Select sponsor_companies.name as company_name, job_ads.job_title, 
+                    job_ads.city, job_ads.province, job_ads.pay_rate
+                    from job_ads
+                    join sponsor_companies
+                    on job_ads.sponsor_company_id = sponsor_companies.id;";
             $stmt = $pdo->query($sql);
 
             while ($item = $stmt->fetch()) {
-                echo "<tr><td><a href='jobs.php?comp_id=".$item["id"]."'>". $item["name"] ."</a></td><td>" . $item["sponsor_level"] . "</td></tr>";
+                echo "<tr><td>".$item["company_name"]."</td><td>"
+                    .$item["job_title"] . "</td><td>"
+                    .$item["city"] . "</td><td>"
+                    .$item["province"] . "</td><td>"
+                    .$item["pay_rate"] . "</td></tr>";
             }
             ?>
         </table>
