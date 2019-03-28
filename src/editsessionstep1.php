@@ -56,37 +56,49 @@
     </table>
     <br>
     <form action="editsessionstep2.php?sename='<?php echo $sename?>'" method="post">
-        Enter a room number:
-        <input type="text" name="newlocation" value="<?php echo $room_location?>">
-        <br>
-        Select a date:
-        <?php
-        echo "<input type='hidden' name='sename' value=$sename>";
-        echo "<select name='newdate'>";
-//        $sql = "Select distinct date(start_date_time) as date from sessions order by date";
-//        $stmt = $pdo->query($sql);
-//        while ($item = $stmt->fetch()) {
-//            echo "<option value=".$item["date"].">".$item["date"]."</option>";
-//        }
-        if (strtotime($date) == strtotime('2019-04-02')){
-            echo "<option id='2019-04-01' value='2019-04-01'>2019-04-01</option>";
-            echo "<option id='2019-04-02' value='2019-04-02' selected='selected'>2019-04-02</option>";
-        } else {
-            echo "<option id='2019-04-01' value='2019-04-01' selected='selected'>2019-04-01</option>";
-            echo "<option id='2019-04-02' value='2019-04-02'>2019-04-02</option>";
-        }
-        echo "</select>";
-        ?>
-        <br>
-        Enter start time:
-        <input type="text" name="newstart_time" value="<?php echo $start_time?>">
-        <br>
-        Enter end time:
-        <input type="text" name="newend_time" value="<?php echo $end_time?>">
-        <br>
-        <input type="submit" value="Complete">
-<!--        <input type="submit" value="Create new session" formaction="/ConferenceOrganization/src/createsessionmessage.php">-->
-        <input type="button" value="Back" onclick="history.back()">
+        <ul class="form-style">
+            <li>
+                <label>Enter a room number:</label>
+                <input type="text" name="newlocation" value="<?php echo $room_location?>">
+            </li>
+
+            <li>
+                <label>Select a date:</label>
+                <?php
+                echo "<input type='hidden' name='sename' value=$sename>";
+                echo "<select name='newdate'>";
+                //        $sql = "Select distinct date(start_date_time) as date from sessions order by date";
+                //        $stmt = $pdo->query($sql);
+                //        while ($item = $stmt->fetch()) {
+                //            echo "<option value=".$item["date"].">".$item["date"]."</option>";
+                //        }
+                if (strtotime($date) == strtotime('2019-04-02')){
+                    echo "<option id='2019-04-01' value='2019-04-01'>2019-04-01</option>";
+                    echo "<option id='2019-04-02' value='2019-04-02' selected='selected'>2019-04-02</option>";
+                } else {
+                    echo "<option id='2019-04-01' value='2019-04-01' selected='selected'>2019-04-01</option>";
+                    echo "<option id='2019-04-02' value='2019-04-02'>2019-04-02</option>";
+                }
+                echo "</select>";
+                ?>
+            </li>
+
+            <li>
+                <label>Enter start time:</label>
+                <input type="text" name="newstart_time" value="<?php echo $start_time?>">
+            </li>
+
+            <li>
+                <label>Enter end time:</label>
+                <input type="text" name="newend_time" value="<?php echo $end_time?>">
+            </li>
+
+            <li>
+                <input type="submit" value="Complete">
+        <!--        <input type="submit" value="Create new session" formaction="/ConferenceOrganization/src/createsessionmessage.php">-->
+                <input type="button" value="Back" onclick="history.back()">
+            </li>
+        </ul>
     </form>
 
 
