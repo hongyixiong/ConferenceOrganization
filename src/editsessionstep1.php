@@ -40,11 +40,15 @@
         $stmt = $pdo->query($sql);
 
         while ($item = $stmt->fetch()) {
+            $room_location = $item['room_location'];
+            $day = $item['day'];
+            $start_time = $item['start_time'];
+            $end_time = $item['end_time'];
             echo "<tr><td>".$item['name']."</td><td>"
-                .$item['room_location']."</td><td>2-"
-                .$item['day']."</td><td>"
-                .$item['start_time']."</td><td>"
-                .$item['end_time']."</td></tr>";
+                .$room_location."</td><td>2-"
+                .$day."</td><td>"
+                .$start_time."</td><td>"
+                .$end_time."</td></tr>";
         }
         ?>
     </table>
@@ -52,22 +56,21 @@
     <br>
     <form action="editsessionstep2.php?sename='<?php echo $sename?>'" method="post">
         Enter room number:
-        <input type="text" name="newlocation">
+        <input type="text" name="newlocation" value="<?php echo $room_location?>">
         <br>
         Select date:
         <select name="newdate">
             <option value="02-07">2-7</option>
             <option value="02-08">2-8</option>
         </select>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br>
         Change start time:
-        <input type="text" name="newstart_time" value="00:00">
+        <input type="text" name="newstart_time" value="<?php echo $start_time?>">
         <br>
         Change end time:
-        <input type="text" name="newend_time" value="00:00">
+        <input type="text" name="newend_time" value="<?php echo $end_time?>">
         <br>
-        <input type="submit" value="Next">
+        <input type="submit" value="Complete">
         <input type="button" value="Back" onclick="history.back()">
     </form>
 

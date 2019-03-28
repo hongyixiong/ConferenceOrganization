@@ -30,6 +30,12 @@ from sponsors
 join sponsor_companies
 on sponsor_companies.id = sponsors.sponsor_company_id;
 
+-- Select job adds.
+Select sponsor_companies.name as company_name, job_ads.job_title, job_ads.city, job_ads.province, job_ads.pay_rate
+from job_ads
+join sponsor_companies
+on job_ads.sponsor_company_id = sponsor_companies.id;
+
 
 
 
