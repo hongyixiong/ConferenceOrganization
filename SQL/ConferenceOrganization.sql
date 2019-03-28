@@ -173,7 +173,7 @@ INSERT INTO registrations(attendee_id,registration_role,amount_paid) VALUES
 ('0010181112', 'Student', 50),
 ('0010181113', 'Student', 50),
 ('0010181114', 'Student', 50),
-('0010181115', 'Student', 40), 
+('0010181115', 'Student', 50),
 ('0010181116', 'Professional', 100),
 ('0010181117', 'Professional', 100),
 ('0010181118', 'Professional', 100),
