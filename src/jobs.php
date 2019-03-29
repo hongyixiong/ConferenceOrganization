@@ -24,11 +24,14 @@
 
 <div id="main-content">
     <h1 id="page-title">
+        Jobs Posted By
         <?php
         $comp_id = $_GET['comp_id'];
-        echo $comp_id;
+        $sql_comp_name = "Select name from sponsor_companies where id='".$comp_id."'";
+        $stmt_comp_name = $pdo->query($sql_comp_name);
+        $item_comp_name = $stmt_comp_name->fetch();
+        echo $item_comp_name['name'];
         ?>
-        Jobs
     </h1>
     <table>
         <tr>
