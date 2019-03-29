@@ -36,7 +36,6 @@
                 .$item['id']."</td><td>"
                 .$item['sponsor_level']."</td><td>";
             echo '<a href="deletecomp.php?comid='.$comid.'">delete</a></td>'; 
-            echo '<script>console.log("'.$comid.'")</script>';
         }
         ?>
 </table>

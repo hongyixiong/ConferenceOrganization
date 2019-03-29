@@ -47,7 +47,7 @@
                 .$item['date']."</td><td>"
                 .$item['start_time']."</td><td>"
                 .$item['end_time']."</td><td>";
-            echo '<a href="editsessionstep1.php?sename='.$sename.'">edit</a></td>';
+            echo '<a href="editsessionstep1.php?sename='.$sename.'">edit</a></td></tr>';
         }
         ?>
     </table>

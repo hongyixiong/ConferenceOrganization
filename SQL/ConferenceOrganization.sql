@@ -216,19 +216,22 @@ INSERT INTO job_ads(sponsor_company_id,job_title,province,city,pay_rate) VALUES
 ('100000000','Software developer','ON','Waterloo','90000');
 
 INSERT INTO sessions (name, room_location, start_date_time, end_date_time, speaker_id) VALUES 
-('Global warming', 'room 1100', '2019-04-01 08:30:00', '2019-04-01 12:00:00', '0010181111'),
-('AI topics', 'room 1101', '2019-04-01 08:30:00', '2019-04-01 12:00:00', '0010181116'),
-('Deep learning', 'room 1101', '2019-04-01 14:30:00', '2019-04-01 16:00:00', '0010181116'),
+('Global warming', 'room 1100', '2019-04-01 08:30:00', '2019-04-01 12:00:00', '0010181117'),
+('AI topics', 'room 1101', '2019-04-01 08:30:00', '2019-04-01 12:00:00', '0010181120'),
+('Deep learning', 'room 1101', '2019-04-01 14:30:00', '2019-04-01 16:00:00', '0010181120'),
 ('Ancient Greece', 'room 1200', '2019-04-02 13:00:00', '2019-04-02 14:15:00', '0010181121'),
-('Database optimizations', 'room 1101', '2019-04-02 14:30:00', '2019-04-02 15:45:00', '0010181121'),
-('Ancient Rome', 'room 1200', '2019-04-02 14:30:00', '2019-04-02 15:45:00', '0010181121');
+('Database optimizations', 'room 1101', '2019-04-02 14:30:00', '2019-04-02 15:45:00', '0010181119'),
+('Ancient Rome', 'room 1200', '2019-04-02 14:30:00', '2019-04-02 15:45:00', '0010181123');
 
 INSERT INTO students (attendee_id, school, hotel_room_number) VALUES 
 ('0010181111', 'Queen''s University', '10'), 
 ('0010181112', 'University of Waterloo', '7'), 
 ('0010181113', 'Western University', '10'),
 ('0010181114', 'University of Toronto', '9'),
-('0010181115', 'Queen''s University', '10');
+('0010181115', 'University of Waterloo', '1'),
+('0010181116', 'McMaster University', '4'),
+('0010181117', 'Queen''s University', '3'),
+('0010181118', 'Queen''s University', '11');
 
 INSERT INTO professionals (attendee_id) VALUES 
 ('0010181116'),

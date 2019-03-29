@@ -28,13 +28,16 @@
             <tr>
                 <th>Company name</th>
                 <th>Level of sponsorship</th>
+                <th>Edit number of emails sent</th>
             </tr>
             <?php
             $sql = "Select name, sponsor_level, id from sponsor_companies;";
             $stmt = $pdo->query($sql);
 
             while ($item = $stmt->fetch()) {
-                echo "<tr><td><a href='jobs.php?comp_id=".$item["id"]."'>". $item["name"] ."</a></td><td>" . $item["sponsor_level"] . "</td></tr>";
+                $id = $item["id"];
+                echo "<tr><td><a href='jobs.php?comp_id=".$id."'>". $item["name"] ."</a></td><td>" . $item["sponsor_level"] . "</td><td>";
+                echo '<a href="editcompanystep1.php?id='.$id.'">Edit</a></td></tr>';
             }
             ?>
         </table>
