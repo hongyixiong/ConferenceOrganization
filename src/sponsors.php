@@ -31,7 +31,11 @@
                 <th>Edit number of emails sent</th>
             </tr>
             <?php
-            $sql = "Select name, sponsor_level, id from sponsor_companies;";
+            $sql = "Select sponsor_companies.name as name, sponsor_companies.sponsor_level as sponsor_level, sponsor_companies.id as id
+                    from sponsor_companies
+                    join sponsor_levels
+                    on sponsor_companies.sponsor_level = sponsor_levels.sponsor_level
+                    order by sponsor_levels.amount desc;";
             $stmt = $pdo->query($sql);
 
             while ($item = $stmt->fetch()) {
