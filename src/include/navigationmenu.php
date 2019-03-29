@@ -1,3 +1,7 @@
+<a href="index.php">
+    <img src="./img/qLogo.png" alt="Queens Logo"/>
+</a>
+
 <nav>
     <ul>
         <li><a href="index.php">Home</a></li>

@@ -13,9 +13,6 @@
 
 <body>
 	<header>
-		<a href="index.php">
-			<img src="./img/placeholder_personal_portrait.jpg" alt="Portrait of River Lawrence"/>
-		</a>
         <?php
         include 'include\navigationmenu.php';
         ?>
@@ -23,13 +20,14 @@
 
 	<div id="main-content">
 		<h1 id="page-title">Conference Organization System</h1>
-		
-		<p>This is a website for CISC 332 Project</p>
+        <img id="img-title" src="./img/Conference.jpg" alt="Conference Picture"/>
+		<h3>Welcome to Queens Conference Organization System</h3>
+        <p>This is a project for CISC 332 (Database) Group 99</p>
 			
 	</div> <!-- #main-content -->
 		
 	<footer>
-		<img src="./img/qflag.jpg" alt="Ontario provincial flag"/>
+		<img src="./img/qflag.jpg" alt="Queens flag"/>
 	</footer>
 
 </body>

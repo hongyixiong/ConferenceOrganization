@@ -13,10 +13,6 @@
 
 <body>
 	<header>
-        <!--Should be included in all .php and .html files-->
-		<a href="index.php">
-			<img src="./img/placeholder_personal_portrait.jpg" alt="Portrait of River Lawrence"/>
-		</a>
         <?php
         include 'include\navigationmenu.php';
         ?>
@@ -25,6 +21,7 @@
 	<div id="main-content">
 
 		<h1 id="page-title">Sub-Committees</h1>
+        <img id="img-title" src="./img/committee.jpg" alt="committee picture"/>
 		<ul class="list-style">
             <?php
             $sql = "select name from sub_committees";
@@ -39,7 +36,7 @@
 	</div> <!-- #main-content -->
 		
 	<footer>
-		<img src="./img/qflag.jpg" alt="Ontario provincial flag"/>
+		<img src="./img/qflag.jpg" alt="Queens flag"/>
 	</footer>
 
 </body>

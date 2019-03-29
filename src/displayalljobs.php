@@ -13,10 +13,6 @@
 
 <body>
     <header>
-        <!--Should be included in all .php and .html files-->
-        <a href="index.php">
-            <img src="./img/placeholder_personal_portrait.jpg" alt="Portrait of River Lawrence"/>
-        </a>
         <?php
         include 'include\navigationmenu.php';
         ?>
