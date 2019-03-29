@@ -205,10 +205,10 @@ INSERT INTO sponsor_levels (sponsor_level, amount, max_email_number) VALUES
 ('Bronze', 1000, '0');
 
 INSERT INTO sponsor_companies(id,name,number_emails_sent,sponsor_level) VALUES
-('123123123','Pizza Pit',0,'Bronze'),
+('123123123','Pizza Pizza',0,'Bronze'),
 ('999999999','Queen''s University',3,'Silver'),
-('012012012','Ubsoft',0,'Gold'),
-('100000000', 'Alphabet Inc.', 4, 'Platinum');
+('012012012','Microsoft',0,'Gold'),
+('100000000', 'Tim Hortons.', 4, 'Platinum');
 
 INSERT INTO job_ads(sponsor_company_id,job_title,province,city,pay_rate) VALUES
 ('012012012','Senior Game Designer','ON','Toronto','70000'),
