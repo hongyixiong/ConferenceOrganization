@@ -24,17 +24,32 @@
 
 	<div id="main-content">
 
-		<h1 id="page-title">More Functions</h1>
+		<h1 id="page-title">Add job</h1>
 
-        <div class="list-nav">
-            <ul>
-                <li><a href="addattendeestep1.php">Add an attendee</a> </li>
-                <li><a href="addsponsorcomp.php">Add a sponsorship company</a> </li>
-                <li><a href="delsponsorcomp.php">Delete a sponsorship company</a> </li>
-                <li><a href="totalintake.php">Show the intakes of the conference</a> </li>
-                <li><a href="addjob.php">Add job to a company</a> </li>
-            </ul>
-        </div>
+		<?php
+
+		$comid = $_POST['comid'];
+		$title = $_POST['title'];
+		$city = $_POST['city'];
+		$province = $_POST['province'];
+		$pay = $_POST['pay'];
+
+		if(!is_numeric($pay)){
+			echo "<span style=\"color:red\">Invalid pay rate, must be a number.</span>";
+			echo '<Button value = "back" onclick="history.back()">Back</Button>';
+		}else{
+
+
+		$sql = "INSERT INTO job_ads (sponsor_company_id, job_title, city, province, pay_rate) VALUES (?,?,?,?,?);";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute([$comid,$title,$city,$province,$pay]);
+
+		header("location: displayalljobs.php");
+
+		}
+
+		?>
+        
 
 	</div> <!-- #main-content -->
 		
