@@ -58,7 +58,7 @@ CREATE TABLE sessions(
 );
 
 CREATE TABLE hotel_rooms(
-    room_number INT NOT null,
+    room_number INT UNIQUE NOT null,
     number_of_beds INT NOT null,
     PRIMARY KEY (room_number, number_of_beds)
 );
@@ -191,12 +191,12 @@ INSERT INTO hotel_rooms(room_number,number_of_beds) VALUES
 (03, 2),
 (04, 2),
 (05, 2),
-(06, 3),
-(07, 3),
-(08, 3),
-(09, 4),
-(10, 4),
-(11, 4);
+(06, 1),
+(07, 1),
+(08, 1),
+(09, 2),
+(10, 2),
+(11, 2);
 
 INSERT INTO sponsor_levels (sponsor_level, amount, max_email_number) VALUES 
 ('Platinum', 10000, '5'), 
